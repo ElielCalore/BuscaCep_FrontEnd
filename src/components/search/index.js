@@ -20,12 +20,10 @@ export function SearchBar({ search, setCep, setSearch}) {
 
   return (
     <>
-      <div className="col-lg-6">
-          <div className="input-group">
-           <input onChange={handleChange} match={"/^[0-9]{5}-[0-9]{3}$/"} maxLength="8" type="number" className="form-control" placeholder="Entre com a informação aqui..."/>
-           <span className="input-group-btn">
-            <button onClick={handleSubmit} className="btn btn-default" type="button">Pesquise</button>
-           </span>
+      <div>
+          <div className="d-flex flex-row">
+           <input onChange={handleChange} type="number" className="form-control" placeholder="Digite seu Cep Aqui..."/>
+           <button onClick={handleSubmit} className="btn btn-dark" type="button">Pesquise</button>
           </div>
       </div>
 
