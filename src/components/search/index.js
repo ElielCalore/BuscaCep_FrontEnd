@@ -29,18 +29,6 @@ export function SearchBar({ search, setCep, setSearch}) {
           </div>
       </div>
 
-      {/*}
-      <input
-        size="large"
-        value={search}
-        type="number"
-        placeholder="input search text"
-        onChange={handleChange}
-        enterButton
-      >
-      </input>
-      <button>Pesquisar</button>
-      */}
     </>
   );
 }
