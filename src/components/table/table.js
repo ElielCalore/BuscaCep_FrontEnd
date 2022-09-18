@@ -1,36 +1,23 @@
-
-
-export function Table({cep}){
-
-    return(
-        <div>
-    
-        <table className="table ">
-
-        <thead> 
-            <tr className="table-dark text-white text-center">
-            <th>Localidade</th>
-            <th>Logradouro</th>
-            <th>Cep</th>
-            <th>UF</th>
-            <th>IBGE</th>
-            <th>DDD</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td>{cep.localidade}</td>
-            <td>{cep.logradouro}</td>
-            <td>{cep.bairro}</td>
-            <td>{cep.uf}</td>
-            <td>{cep.ibge}</td>
-            <td>{cep.ddd}</td>
-          </tr>
-        </tbody>
-      </table>
-      
+export function Table({ cep, messageBody }) {
+  return (
+    <div className=" d-flex flex-column justify-content-around w-75">
+      <div className="bg-primary p-2 text-white bg-opacity-50 d-flex flex-row justify-content-between">
+        {messageBody.map((current) => {
+          return (
+            <div key={current.info} className="m-1">
+              {current.info}
+            </div>
+          );
+        })}
       </div>
-    )
-
+      <div className="bg-light p-2 text-dark bg-opacity-50 d-flex flex-row justify-content-between align-items-center p-1 ">
+        <div>{cep.logradouro !== "" ? cep.logradouro : " not found "} </div>
+        <div>{cep.bairro !== "" ? cep.bairro : "not found"}</div>
+        <div>{cep.localidade}</div>
+        <div>{cep.uf}</div>
+        <div>{cep.ibge}</div>
+        <div>{cep.ddd}</div>
+      </div>
+    </div>
+  );
 }
