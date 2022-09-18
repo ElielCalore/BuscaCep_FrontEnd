@@ -16,7 +16,7 @@ export function Search({ search, setCep, setSearch }) {
       setTimeout(async () => {
         setLoading((prevState) => !prevState);
 
-        const response = await api.get(`${search}`);
+        const response = await api.get(`/read/${search}`);
         setCep(response.data);
       }, 1000);
 
